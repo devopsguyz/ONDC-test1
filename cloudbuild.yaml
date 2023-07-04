@@ -1,0 +1,57 @@
+steps:
+#- name: 'gcr.io/cloud-builders/git'
+#  id: 'checkout'
+#  args: ['checkout', '.']
+
+- name: 'maven:3.8.3-openjdk-11'
+  id: 'beckn-model'
+  entrypoint: 'mvn'
+  args: ['clean', 'install']
+  dir: 'beckn-model'
+
+#- name: 'maven:3.8.3-openjdk-11'
+#  id: 'beckn-common'
+#  entrypoint: 'mvn'
+#  args: ['clean', 'install']
+#  dir: 'beckn-common'
+
+- name: 'maven:3.8.3-openjdk-11'
+  id: 'beckn-adaptor-jpa'
+  entrypoint: 'mvn'
+  args: ['clean', 'install']
+  dir: 'beckn-adaptor-jpa'
+
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'build-docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/_SERVICE_NAME:$COMMIT_SHA', '.']
+  dir: 'beckn-adaptor-jpa'
+
+#- name: 'gcr.io/cloud-builders/docker'
+#  id: 'push-docker'
+#  args: ['push', 'gcr.io/$PROJECT_ID/$SERVICE_NAME:$COMMIT_SHA']
+
+#substitutions:
+#  _REGISTRY: gcr.io
+#  _SERVICE_NAME: gateway
+#  _PROJECT_ID: ondc-cloudrun
+#  _REGION: us-central1
+#  _PORT: '8080'
+
+#steps:
+  # Run Maven build.
+#  - name: 'gcr.io/cloud-builders/maven'
+#    dir: ['beckn-model/**, beckn-common/**, beckn-common-jpa/**']
+#    args: ['clean', 'install']
+#steps:
+#  # Checkout the repository
+#  - name: 'gcr.io/cloud-builders/git'
+#    args: ['clone', 'https://github.com/devopsguyz/ondc-test.git']
+
+#  # Authenticate with GitHub using the token
+#  - name: 'gcr.io/cloud-builders/git'
+#    entrypoint: 'bash'
+#    args:
+#      - '-c'
+#      - |
+#        git config --global credential.helper "store --file=/root/.git-credentials"
+#        echo "https://github.com:${_GITHUB_TOKEN}@github.com" > /root/.git-credentials
