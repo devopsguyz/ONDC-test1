@@ -4,7 +4,7 @@ RUN microdnf install unzip
 RUN mkdir -p /opt/ssl/ && mkdir -p /app
 ARG DEPENDENCY=.
 #RUN unzip ./target/beckn-adaptor-jpa-*.jar
-COPY ./target/beckn-adaptor-jpa-*.jar .
+COPY ./beckn-adaptor-jpa/beckn-adaptor-jpa-*.jar .
 RUN unzip beckn-adaptor-jpa-*.jar
 VOLUME /tmp
 RUN  cp -r ${DEPENDANCY}/BOOT-INF/lib /app/lib && cp -r ${DEPENDANCY}/META-INF /app/META-INF && cp -r ${DEPENDANCY}/BOOT-INF/classes /app
