@@ -12,5 +12,5 @@ RUN  cp -r ${DEPENDANCY}/BOOT-INF/lib /app/lib && cp -r ${DEPENDANCY}/META-INF /
 #COPY ${DEPENDENCY}/META-INF /app/META-INF
 #COPY ${DEPENDENCY}/BOOT-INF/classes /app
 #RUN mkdir -p /opt/ssl/
-COPY ./prod/* /opt/ssl/
+COPY ./beckn-adaptor-jpa/prod/* /opt/ssl/
 ENTRYPOINT ["java","-cp","app:app/lib/*"]
