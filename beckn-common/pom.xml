@@ -93,11 +93,11 @@
 			<artifactId>bcprov-jdk15on</artifactId>
 			<version>1.69</version>
 		</dependency>
-		<dependency>
+		//<dependency>
 			<groupId>com.nsdl</groupId>
 			<artifactId>beckn-model</artifactId>
 			<version>${ondc-model.version}</version>
-		</dependency>
+		</dependency>//
 
 	</dependencies>
 </project>
