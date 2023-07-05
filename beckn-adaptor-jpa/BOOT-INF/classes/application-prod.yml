@@ -1,0 +1,93 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ondc-adaptor-${beckn.entity.type}
+    username: postgres
+    password: postgres
+
+logging:
+  level:
+    root: info
+    '[com.nsdl.beckn]': info
+    '[reactor.netty.http.client]': trace
+  file:
+    name: ./logs/adaptor.log
+
+
+####### Below cache timing are in seconds #####
+
+ehcache:
+  cacheregion:
+    beckn-api:
+      common-cache:
+        timetolive: 86400
+        entrycount: 1000
+      blacklist-cache:
+        timetolive: 1800
+        entrycount: 1000
+      lookup-cache:
+        timetolive: 1800
+        entrycount: 1000
+        startup:
+          load: true
+          domains: nic2004:52110,nic2004:60232,ONDC:RET10,ONDC:RET14
+        scheduled:
+          enabled: true
+          cron: 0 0 3 * * ?
+          #cron: '-'
+    
+   
+####### Other Properties #####       
+beckn:
+  entity:
+    type: buyer
+  gateway:
+    url: https://pilot-gateway-1.beckn.nsdl.co.in
+  http:
+    timeout: 30_000
+    backoff: 500
+    retry-count: 0
+    header-validity: 6000
+  webflux:
+    provider:
+      max-connections: 2000
+      max-idle-time: 20
+      max-life-time: 90
+      pending-acquire-timeout: 60
+      evict-in-background: 120
+    codec:
+      max-in-memory-size: 16777216
+  thread:
+    common: 50
+    http: 200
+    database: 400
+  persistence:
+    type: http|db-postgres
+    audit-schema-error: true
+    file-path: ./response/
+  parameter:
+    validate-schema: false
+    city-filter: false
+    block-postman: false
+  lookup:
+    url: https://pilot-gateway-1.beckn.nsdl.co.in/ondc-3/vlookup
+  blip:
+    enabled: false
+    url: https://logging.becknprotocol.io/blip
+  alert:
+    enabled: false
+    url: http://localhost:8099/alert
+  gzip:
+    enabled:
+      incoming: false
+      outgoing: false
+    actions: on_search
+  security:
+    enabled: true
+    allowed-host: localhost

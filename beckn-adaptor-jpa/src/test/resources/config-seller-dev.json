@@ -1,0 +1,244 @@
+{
+	"lookup": {
+		"http_entity_endpoint": "https://pilot-gateway-1.beckn.nsdl.co.in/ondc/lookup",
+		"http_timeout": 9000,
+		"http_retry_count": 0,
+		"header_validity": 600000,
+		"set_authorization_header": false
+	},
+	"subscribers": [
+		{
+			"subscriber_id": "ondc_seller_ndhgo",
+			"url_id": "ndhgo",
+			"keyid": "ondc_seller_1|203|ed25519",
+			"remotehost_ip": [
+				"all",
+				"172.1.90.79"
+			],
+			"signing": {
+				"private_key": "K2qouM7hs57AStiEcKfCvXTgLtVFxMRhhCsbBUrWVaI="
+			},
+			"api": [
+				{
+					"name": "search",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/search",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				},
+				{
+					"name": "select",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/select",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "cancel",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/cancel",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "confirm",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/confirm",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "init",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/init",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "rating",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/rating",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "status",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/status",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "support",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/support",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "track",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/track",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "update",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/update",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "recon",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				}
+			]
+		},
+		{
+			"subscriber_id": "ondc_seller_2",
+			"url_id": "seller2",
+			"keyid": "ondc_seller_2|204|ed25519",
+			"remotehost_ip": [
+				"all",
+				"172.1.90.79"
+			],
+			"signing": {
+				"private_key": "K2qouM7hs57AStiEcKfCvXTgLtVFxMRhhCsbBUrWVaI="
+			},
+			"api": [
+				{
+					"name": "search",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/search",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				},
+				{
+					"name": "select",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/select",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "cancel",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/cancel",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "confirm",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/confirm",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "init",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/init",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "rating",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/rating",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "status",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/status",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "support",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/support",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "track",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/track",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "update",
+					"http_entity_endpoint": "http://localhost:8089/seller/mock/update",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "recon",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				}
+			]
+		}
+	],
+	"blacklist": {
+		"buyer": [],
+		"seller": [
+			"localhost/127.0.0.1",
+			"http://localhost:8088"
+		]
+	}
+}

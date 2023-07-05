@@ -1,0 +1,234 @@
+{
+	"lookup": {
+		"http_entity_endpoint": "https://pilot-gateway-1.beckn.nsdl.co.in/ondc/lookup",
+		"http_timeout": 9000,
+		"http_retry_count": 0,
+		"header_validity": 600000,
+		"set_authorization_header": false
+	},
+	
+	"subscribers": [
+		{
+			"subscriber_id": "ondc_buyer_1",
+			"keyid": "ondc_buyer_1|203|ed25519",
+			"remotehost_ip": ["all", "172.1.90.79"],
+			"signing": {
+				"private_key": "K2qouM7hs57AStiEcKfCvXTgLtVFxMRhhCsbBUrWVaI="
+			},
+			"api": [
+				{
+					"name": "search",
+					"http_entity_endpoint": "",
+					"http_timeout": 10000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": true
+				},
+				{
+					"name": "select",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				},
+				{
+					"name": "cancel",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "confirm",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "init",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "rating",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "status",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "support",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "track",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "update",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "recon",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				}
+			]
+		},
+		{
+			"subscriber_id": "ondc_buyer_2",
+			"keyid": "ondc_buyer_1|6",
+			"remotehost_ip": ["172.1.90.88", "172.1.90.89"],
+			"signing": {
+				"certificate_used": false,
+				"certificate_type": "pkcs12",
+				"certificate_alias": "tsa",
+				"certificate_path": "../network-participant.p12",
+				"certificate_pwd": "bnNkbDEy",
+				"private_key": ""
+			},
+			"api": [
+				{
+					"name": "search",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "select",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": false,
+					"set_authorization_header": false
+				},
+				{
+					"name": "cancel",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "confirm",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "init",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "rating",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "status",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "support",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "track",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				},
+				{
+					"name": "update",
+					"http_entity_endpoint": "",
+					"http_timeout": 8000,
+					"http_retry_count": 0,
+					"header_validity": 600000,
+					"header_authentication": true,
+					"set_authorization_header": true
+				}
+			]
+		}
+	],
+	
+	"blacklist": {
+		"buyer": [],
+		"seller": [
+			"localhost/127.0.0.1",
+			"http://localhost:8088"
+		]
+	}
+}

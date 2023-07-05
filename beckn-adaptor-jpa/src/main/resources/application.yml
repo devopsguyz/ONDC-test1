@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  banner:
+    location: banners/banner-${beckn.entity.type}-${spring.profiles.active}.txt
+  output:
+    ansi:
+      enabled: always
