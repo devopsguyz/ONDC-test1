@@ -20,10 +20,17 @@ steps:
 #  args: ['clean', 'install']
 #  dir: 'beckn-adaptor-jpa'
 
+steps:
 - name: 'gcr.io/cloud-builders/docker'
-  id: 'build-docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/grafana-monitoring-demo/gcf-artifacts:$COMMIT_SHA', '.']
+  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/grafana-monitoring-demo/gcf-artifacts/test:tag1', '.' ]
   dir: 'beckn-adaptor-jpa/Dockerfile'
+images:
+- 'us-west2-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/test:tag1'
+
+#- name: 'gcr.io/cloud-builders/docker'
+#  id: 'build-docker'
+#  args: ['build', '-t', 'us-central1-docker.pkg.dev/grafana-monitoring-demo/gcf-artifacts:$COMMIT_SHA', '.']
+#  dir: 'beckn-adaptor-jpa/Dockerfile'
 
 #- name: 'gcr.io/cloud-builders/docker'
 #  id: 'push-docker'
