@@ -9,11 +9,11 @@ steps:
   args: ['clean', 'install']
   dir: 'beckn-model'
 
-#- name: 'maven:3.8.3-openjdk-11'
-#  id: 'beckn-common'
-#  entrypoint: 'mvn'
-#  args: ['clean', 'install']
-#  dir: 'beckn-common'
+- name: 'maven:3.8.3-openjdk-11'
+  id: 'beckn-common'
+  entrypoint: 'mvn'
+  args: ['clean', 'install']
+  dir: 'beckn-common'
 
 - name: 'maven:3.8.3-openjdk-11'
   id: 'beckn-adaptor-jpa'
@@ -21,10 +21,10 @@ steps:
   args: ['clean', 'install']
   dir: 'beckn-adaptor-jpa'
 
-- name: 'gcr.io/cloud-builders/docker'
-  id: 'build-docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/_SERVICE_NAME:$COMMIT_SHA', '.']
-  dir: 'beckn-adaptor-jpa'
+#- name: 'gcr.io/cloud-builders/docker'
+#  id: 'build-docker'
+#  args: ['build', '-t', 'gcr.io/$PROJECT_ID/_SERVICE_NAME:$COMMIT_SHA', '.']
+#  dir: 'beckn-adaptor-jpa'
 
 #- name: 'gcr.io/cloud-builders/docker'
 #  id: 'push-docker'
