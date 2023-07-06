@@ -1,0 +1,39 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: i${INSTANCE}-${SERVICE}
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: '2'  ##
+        autoscaling.knative.dev/minScale: '0'
+        run.googleapis.com/vpc-access-connector: my-cloud-connector
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      containers:
+      - image: ${IMAGE}
+        ports:
+        - name: http1
+          containerPort: ${PORT}
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 1Gi 
+        env:
+        - name: JAVA_OPTS
+          value: "-Dspring.config.location=/opt/config/application-dev.yml -Dspring.profiles.active=dev"    
+        volumeMounts:
+        - mountPath: /opt/config/
+          name: app-yml
+      volumes:
+      - name: app-yml
+        secret:
+          items:
+          - key: latest
+            path: application-dev.yml
+          secretName: ${SERVICE}-yml    
+  traffic:
+  - percent: 100
+    latestRevision: true
