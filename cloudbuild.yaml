@@ -32,6 +32,16 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA']
 
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud secrets versions access latest --secret=SERVICE_KEY --format='get(payload.data)' | base64 -d > ./service.yml
+  - name: 'gcr.io/cloud-builders/your-builder'
+    # Use the service.yml file in your build steps
+    
 # Deploy container image to Cloud Run
 # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
 #   entrypoint: gcloud
@@ -45,6 +55,10 @@ steps:
 #   - 'REGION'
 # images:
 # - 'gcr.io/$PROJECT_ID/SERVICE-NAME:$COMMIT_SHA'
+
+
+
+
 
  
 #- name: 'gcr.io/cloud-builders/docker'
