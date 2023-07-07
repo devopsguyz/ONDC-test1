@@ -28,9 +28,9 @@ steps:
 #- 'us-west2-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/test:tag1'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA', '-f', 'Dockerfile', '.']
+  args: ['build', '-t', 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo/demo:$SHORT_SHA', '-f', 'Dockerfile', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA']
+  args: ['push', 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo/demo:$SHORT_SHA']
 
 #steps:
 #  - name: 'gcr.io/cloud-builders/gcloud'
