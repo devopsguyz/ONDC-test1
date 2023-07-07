@@ -51,7 +51,7 @@ steps:
    - '--image'
    - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
    - '--region'
-   - 'REGION'
+   - 'asia-south2'
  images:
  - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
 
