@@ -1,4 +1,4 @@
-steps:
+#steps:
 #- name: 'gcr.io/cloud-builders/git'
 #  id: 'checkout'
 #  args: ['checkout', '.']
@@ -42,7 +42,7 @@ steps:
 #  - name: 'gcr.io/cloud-builders/your-builder'
 #    # Use the service.yml file in your build steps
     
- Deploy container image to Cloud Run
+ #Deploy container image to Cloud Run
  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
    args:
