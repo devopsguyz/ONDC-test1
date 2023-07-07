@@ -42,19 +42,19 @@ steps:
   - name: 'gcr.io/cloud-builders/your-builder'
     # Use the service.yml file in your build steps
     
-# Deploy container image to Cloud Run
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: gcloud
-#   args:
-#   - 'run'
-#   - 'deploy'
-#   - 'demo'
-#   - '--image'
-#   - 'gcr.io/$PROJECT_ID/demo:$SHORT_SHA'
-#   - '--region'
-#   - 'REGION'
-# images:
-# - 'gcr.io/$PROJECT_ID/SERVICE-NAME:$COMMIT_SHA'
+ Deploy container image to Cloud Run
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+   - 'run'
+   - 'deploy'
+   - 'demo'
+   - '--image'
+   - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
+   - '--region'
+   - 'REGION'
+ images:
+ - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
 
 
 
