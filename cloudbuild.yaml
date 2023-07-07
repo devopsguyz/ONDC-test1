@@ -41,17 +41,17 @@ steps:
 #        gcloud secrets versions access latest --secret=SERVICE_KEY --format='get(payload.data)' | base64 -d > ./service.yml
 #  - name: 'gcr.io/cloud-builders/your-builder'
 #    # Use the service.yml file in your build steps
-#steps:    
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: gcloud
-#   args:
-#   - 'run'
-#   - 'deploy'
-#   - 'demo'
-#   - '--image'
-#   - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
-# images:
-# - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
+steps:    
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+   - 'run'
+   - 'deploy'
+   - 'demo'
+   - '--image'
+   - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
+ images:
+ - 'asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo:$SHORT_SHA'
 
 
 
