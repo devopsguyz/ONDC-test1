@@ -62,6 +62,9 @@ steps:
 images:
 - asia-south2-docker.pkg.dev/grafana-monitoring-demo/demo/demo:$SHORT_SHA
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 
 
  
